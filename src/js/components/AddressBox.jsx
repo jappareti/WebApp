@@ -58,7 +58,7 @@ export default class AddressBox extends Component {
   componentDidUpdate () {
     // If we're in the slide with this component, autofocus the address box, otherwise defocus.
     let { manualFocus } = this.props;
-    if (manualFocus !== undefined) {
+    if (manualFocus !== undefined && !this.state.loading) {
       let address_box = this.refs.autocomplete;
       if (address_box && manualFocus) {
         address_box.focus();
